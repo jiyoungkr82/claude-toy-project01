@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>박지영 · Developer Portfolio</title>
+  <meta name="description" content="AI 기술을 활용해 비즈니스에 필요한 웹사이트를 가장 빠르게 구축하는 개발자 박지영의 포트폴리오." />
+
+  <!-- Tailwind CSS (CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Pretendard', 'Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+          },
+          colors: {
+            ink: {
+              900: '#070b14',
+              800: '#0b1220',
+              700: '#111a2e',
+              600: '#16223a',
+            },
+            brand: {
+              400: '#60a5fa',
+              500: '#3b82f6',
+              600: '#2563eb',
+              700: '#1d4ed8',
+            },
+          },
+          boxShadow: {
+            glow: '0 10px 40px -10px rgba(59, 130, 246, 0.5)',
+          },
+          animation: {
+            'fade-up': 'fadeUp .8s ease-out both',
+            'float': 'float 6s ease-in-out infinite',
+          },
+          keyframes: {
+            fadeUp: {
+              '0%': { opacity: '0', transform: 'translateY(20px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+            float: {
+              '0%,100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-10px)' },
+            },
+          },
+        },
+      },
+    };
+  </script>
+
+  <!-- FontAwesome (CDN) -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
+  <!-- Pretendard / Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body { -webkit-font-smoothing: antialiased; }
+    .grid-bg {
+      background-image:
+        linear-gradient(to right, rgba(255,255,255,0.04) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255,255,255,0.04) 1px, transparent 1px);
+      background-size: 48px 48px;
+      mask-image: radial-gradient(ellipse at top, #000 30%, transparent 75%);
+      -webkit-mask-image: radial-gradient(ellipse at top, #000 30%, transparent 75%);
+    }
+    .glow {
+      background:
+        radial-gradient(40rem 24rem at 20% 10%, rgba(59,130,246,0.30), transparent 60%),
+        radial-gradient(40rem 24rem at 80% 0%, rgba(96,165,250,0.20), transparent 60%);
+      filter: blur(20px);
+    }
+  </style>
+</head>
+
+<body class="bg-ink-900 text-slate-200 font-sans antialiased">
+  <!-- Background decorations -->
+  <div class="pointer-events-none fixed inset-0 z-0 grid-bg"></div>
+  <div class="pointer-events-none fixed inset-x-0 top-0 z-0 h-[60vh] glow"></div>
+
+  <!-- Navigation -->
+  <header class="sticky top-0 z-50 backdrop-blur-md bg-ink-900/70 border-b border-white/5">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="#home" class="flex items-center gap-2 font-bold tracking-tight">
+        <span class="inline-block w-7 h-7 rounded-lg bg-gradient-to-br from-brand-400 to-brand-600 shadow-glow"></span>
+        <span>JIYOUNG<span class="text-brand-400">.</span></span>
+      </a>
+      <nav class="hidden md:flex items-center gap-8 text-sm text-slate-400">
+        <a href="#about" class="hover:text-white transition">About</a>
+        <a href="#stack" class="hover:text-white transition">Stack</a>
+        <a href="#projects" class="hover:text-white transition">Projects</a>
+        <a href="#contact" class="hover:text-white transition">Contact</a>
+      </nav>
+      <a href="#contact"
+         class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-brand-500 hover:bg-brand-600 text-white text-sm font-semibold transition shadow-glow">
+        <i class="fa-regular fa-paper-plane"></i> 문의하기
+      </a>
+    </div>
+  </header>
+
+  <main class="relative z-10">
+    <!-- Hero -->
+    <section id="home" class="relative">
+      <div class="max-w-6xl mx-auto px-6 pt-24 pb-20 md:pt-32 md:pb-28 text-center">
+        <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/5 text-xs tracking-widest text-slate-300 uppercase animate-fade-up">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+          AI-powered Developer · Available for work
+        </span>
+
+        <h1 class="mt-6 text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.05] animate-fade-up">
+          안녕하세요,<br />
+          저는 <span class="bg-gradient-to-r from-brand-400 to-brand-600 bg-clip-text text-transparent">박지영</span> 입니다.
+        </h1>
+
+        <p class="mt-6 max-w-2xl mx-auto text-slate-400 text-base md:text-lg leading-relaxed animate-fade-up">
+          AI 기술을 활용해 비즈니스에 필요한 웹사이트를
+          <span class="text-white font-semibold">빠르게</span> 구축합니다.
+        </p>
+
+        <div class="mt-10 flex items-center justify-center gap-3 animate-fade-up">
+          <a href="#contact"
+             class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-brand-500 hover:bg-brand-600 text-white font-semibold shadow-glow transition">
+            <i class="fa-regular fa-paper-plane"></i> 문의하기
+          </a>
+          <a href="#projects"
+             class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-white font-semibold transition">
+            <i class="fa-solid fa-arrow-down"></i> 프로젝트 보기
+          </a>
+        </div>
+
+        <!-- floating socials -->
+        <div class="mt-12 flex items-center justify-center gap-5 text-slate-400">
+          <a href="mailto:jiyoung.kr82@gmail.com" class="hover:text-brand-400 transition text-xl" aria-label="email"><i class="fa-regular fa-envelope"></i></a>
+          <a href="tel:01055870549" class="hover:text-brand-400 transition text-xl" aria-label="phone"><i class="fa-solid fa-phone"></i></a>
+          <a href="https://github.com/jiyoungkr82" class="hover:text-brand-400 transition text-xl" aria-label="github"><i class="fa-brands fa-github"></i></a>
+          <a href="#" class="hover:text-brand-400 transition text-xl" aria-label="linkedin"><i class="fa-brands fa-linkedin"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="py-20 md:py-28">
+      <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <span class="inline-block px-3 py-1 rounded-full text-xs tracking-widest uppercase text-brand-400 border border-brand-500/30 bg-brand-500/10">About me</span>
+          <h2 class="mt-4 text-3xl md:text-4xl font-extrabold tracking-tight">
+            코드보다 <span class="text-brand-400">문제 해결</span>이<br /> 먼저입니다.
+          </h2>
+          <p class="mt-5 text-slate-400 leading-relaxed">
+            저는 화려한 기술보다 비즈니스가 풀고자 하는 본질적인 문제를 먼저 봅니다.
+            요구사항을 작은 가설로 쪼개고, AI 도구를 활용해 빠르게 프로토타입을
+            만들고, 사용자 반응으로 다음 단계를 결정합니다.
+          </p>
+          <p class="mt-4 text-slate-400 leading-relaxed">
+            결과적으로 더 적게 만들고, 더 빠르게 출시하며, 더 명확한
+            가치를 전달하는 제품을 만들 수 있다고 믿습니다.
+          </p>
+
+          <div class="mt-8 grid grid-cols-3 gap-4">
+            <div class="rounded-xl border border-white/10 bg-white/5 p-4 text-center">
+              <div class="text-2xl font-extrabold text-brand-400">1+</div>
+              <div class="text-xs text-slate-400 mt-1">Years</div>
+            </div>
+            <div class="rounded-xl border border-white/10 bg-white/5 p-4 text-center">
+              <div class="text-2xl font-extrabold text-brand-400">10+</div>
+              <div class="text-xs text-slate-400 mt-1">Projects</div>
+            </div>
+            <div class="rounded-xl border border-white/10 bg-white/5 p-4 text-center">
+              <div class="text-2xl font-extrabold text-brand-400">24h</div>
+              <div class="text-xs text-slate-400 mt-1">응답 시간</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="relative">
+          <div class="absolute -inset-4 rounded-3xl bg-gradient-to-br from-brand-500/20 to-transparent blur-2xl"></div>
+          <div class="relative rounded-2xl overflow-hidden border border-white/10 shadow-glow animate-float">
+            <img
+              src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1200&q=80"
+              alt="개발자의 작업 공간"
+              class="w-full h-full object-cover aspect-[4/5]"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tech Stack -->
+    <section id="stack" class="py-20 md:py-28">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center max-w-2xl mx-auto">
+          <span class="inline-block px-3 py-1 rounded-full text-xs tracking-widest uppercase text-brand-400 border border-brand-500/30 bg-brand-500/10">Tech Stack</span>
+          <h2 class="mt-4 text-3xl md:text-4xl font-extrabold tracking-tight">자주 사용하는 기술</h2>
+          <p class="mt-4 text-slate-400">
+            단순한 페이지를 넘어, 비즈니스 로직과 자동화 시스템을 구축합니다.
+          </p>
+        </div>
+
+        <div class="mt-12 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+          <!-- Java -->
+          <div class="group rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 hover:border-brand-500/40 p-6 text-center transition">
+            <i class="fa-brands fa-java text-4xl text-orange-600 group-hover:scale-110 transition-transform"></i>
+            <div class="mt-3 font-semibold">Java</div>
+            <div class="text-xs text-slate-400 mt-1">Enterprise Logic</div>
+          </div>
+          <!-- Spring Boot -->
+          <div class="group rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 hover:border-brand-500/40 p-6 text-center transition">
+            <i class="fa-solid fa-leaf text-4xl text-green-500 group-hover:scale-110 transition-transform"></i>
+            <div class="mt-3 font-semibold">Spring Boot</div>
+            <div class="text-xs text-slate-400 mt-1">Robust Backend</div>
+          </div>
+          <!-- Python -->
+          <div class="group rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 hover:border-brand-500/40 p-6 text-center transition">
+            <i class="fa-brands fa-python text-4xl text-blue-400 group-hover:scale-110 transition-transform"></i>
+            <div class="mt-3 font-semibold">Python</div>
+            <div class="text-xs text-slate-400 mt-1">Automation & Script</div>
+          </div>
+          <!-- AI (Claude) -->
+          <div class="group rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 hover:border-brand-500/40 p-6 text-center transition">
+            <i class="fa-solid fa-brain text-4xl text-purple-400 group-hover:scale-110 transition-transform"></i>
+            <div class="mt-3 font-semibold">AI (Claude)</div>
+            <div class="text-xs text-slate-400 mt-1">AI-Driven Dev</div>
+          </div>
+          <!-- Docker -->
+          <div class="group rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 hover:border-brand-500/40 p-6 text-center transition">
+            <i class="fa-brands fa-docker text-4xl text-blue-500 group-hover:scale-110 transition-transform"></i>
+            <div class="mt-3 font-semibold">Docker</div>
+            <div class="text-xs text-slate-400 mt-1">Containerization</div>
+          </div>
+        </div>
+
+        <!-- badges -->
+        <div class="mt-10 flex flex-wrap justify-center gap-3">
+          <span class="px-4 py-2 rounded-full text-xs font-medium bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 transition-all duration-300 hover:bg-indigo-500/20 hover:border-indigo-500/40 hover:-translate-y-1 cursor-default">#Object_Oriented</span>
+          <span class="px-4 py-2 rounded-full text-xs font-medium bg-blue-500/10 border border-blue-500/20 text-blue-300 transition-all duration-300 hover:bg-blue-500/20 hover:border-blue-500/40 hover:-translate-y-1 cursor-default">#자동화</span>
+          <span class="px-4 py-2 rounded-full text-xs font-medium bg-purple-500/10 border border-purple-500/20 text-purple-300 transition-all duration-300 hover:bg-purple-500/20 hover:border-purple-500/40 hover:-translate-y-1 cursor-default">#MVP</span>
+          <span class="px-4 py-2 rounded-full text-xs font-medium bg-emerald-500/10 border border-emerald-500/20 text-emerald-300 transition-all duration-300 hover:bg-emerald-500/20 hover:border-emerald-500/40 hover:-translate-y-1 cursor-default">#확장성</span>
+          <span class="px-4 py-2 rounded-full text-xs font-medium bg-amber-500/10 border border-amber-500/20 text-amber-300 transition-all duration-300 hover:bg-amber-500/20 hover:border-amber-500/40 hover:-translate-y-1 cursor-default">#자동화 배포</span>
+          <span class="px-4 py-2 rounded-full text-xs font-medium bg-rose-500/10 border border-rose-500/20 text-rose-300 transition-all duration-300 hover:bg-rose-500/20 hover:border-rose-500/40 hover:-translate-y-1 cursor-default">#성능 최적화</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="py-20 md:py-28">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center max-w-2xl mx-auto">
+          <span class="inline-block px-3 py-1 rounded-full text-xs tracking-widest uppercase text-brand-400 border border-brand-500/30 bg-brand-500/10">Projects</span>
+          <h2 class="mt-4 text-3xl md:text-4xl font-extrabold tracking-tight">최근 작업한 프로젝트</h2>
+          <p class="mt-4 text-slate-400">
+            AI 도구를 활용해 빠르게 만든 실제 비즈니스 웹사이트입니다.
+          </p>
+        </div>
+
+        <div class="mt-12 grid md:grid-cols-3 gap-6">
+          <!-- Project 1 -->
+          <article class="group rounded-2xl overflow-hidden border border-white/10 bg-white/5 hover:bg-white/[0.07] hover:border-brand-500/40 transition flex flex-col">
+            <div class="relative aspect-[16/10] overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&w=900&q=80"
+                alt="커머스 최적화 챗봇"
+                class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                loading="lazy"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-ink-900 via-transparent"></div>
+              <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-ink-900/80 backdrop-blur text-[11px] font-semibold border border-white/10">Landing</span>
+            </div>
+            <div class="p-6 flex-1 flex flex-col">
+              <h3 class="text-lg font-bold">커머스 최적화 챗봇</h3>
+              <p class="mt-2 text-sm text-slate-400 flex-1">
+                본 프로젝트는 글로벌 이커머스 FAQ 데이터를 기반으로 한국어 커머스 환경에 최적화된 상담 챗봇을 구축하는 프로젝트입니다.
+              </p>
+              <div class="mt-4 flex flex-wrap gap-2">
+                <span class="text-[11px] px-2 py-1 rounded bg-brand-500/10 text-brand-400 border border-brand-500/20">PyTorch</span>
+                <span class="text-[11px] px-2 py-1 rounded bg-brand-500/10 text-brand-400 border border-brand-500/20">Huggingface</span>
+                <span class="text-[11px] px-2 py-1 rounded bg-brand-500/10 text-brand-400 border border-brand-500/20">Google Colab</span>
+              </div>
+              <div class="mt-5 flex items-center gap-4 text-sm">
+                <a href="https://huggingface.co/spaces/jiyoungkr82/ko-commerce-chatbot" class="text-brand-400 hover:text-brand-300 inline-flex items-center gap-1.5"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live</a>
+                <a href="https://github.com/jiyoungkr82/ko-commerce-LLM.git" class="text-slate-400 hover:text-white inline-flex items-center gap-1.5"><i class="fa-brands fa-github"></i> Code</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2 -->
+          <article class="group rounded-2xl overflow-hidden border border-white/10 bg-white/5 hover:bg-white/[0.07] hover:border-brand-500/40 transition flex flex-col">
+            <div class="relative aspect-[16/10] overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=900&q=80"
+                alt="AI 커리어 부스터"
+                class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                loading="lazy"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-ink-900 via-transparent"></div>
+              <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-ink-900/80 backdrop-blur text-[11px] font-semibold border border-white/10">SaaS</span>
+            </div>
+            <div class="p-6 flex-1 flex flex-col">
+              <h3 class="text-lg font-bold">AI 커리어 부스터</h3>
+              <p class="mt-2 text-sm text-slate-400 flex-1">
+                지원하려는 기업명과 질문을 입력하면 AI가 저장된 데이터를 조합하여 맞춤형 자소서를 초안을 작성해주는 서비스입니다.
+              </p>
+              <div class="mt-4 flex flex-wrap gap-2">
+                <span class="text-[11px] px-2 py-1 rounded bg-brand-500/10 text-brand-400 border border-brand-500/20">Java</span>
+                <span class="text-[11px] px-2 py-1 rounded bg-brand-500/10 text-brand-400 border border-brand-500/20">Docker</span>
+                <span class="text-[11px] px-2 py-1 rounded bg-brand-500/10 text-brand-400 border border-brand-500/20">AWS</span>
+              </div>
+              <div class="mt-5 flex items-center gap-4 text-sm">
+                <a href="#" class="text-brand-400 hover:text-brand-300 inline-flex items-center gap-1.5"><i class="fa-solid fa-arrow-up-right-from-square"></i>No Live</a>
+                <a href="https://github.com/jiyoungkr82/my-ai-resume.git" class="text-slate-400 hover:text-white inline-flex items-center gap-1.5"><i class="fa-brands fa-github"></i> Code</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3 -->
+          <article class="group rounded-2xl overflow-hidden border border-white/10 bg-white/5 hover:bg-white/[0.07] hover:border-brand-500/40 transition flex flex-col">
+            <div class="relative aspect-[16/10] overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=900&q=80"
+                alt="AI 신년 운세&부적 생성기"
+                class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                loading="lazy"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-ink-900 via-transparent"></div>
+              <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-ink-900/80 backdrop-blur text-[11px] font-semibold border border-white/10">AI</span>
+            </div>
+            <div class="p-6 flex-1 flex flex-col">
+              <h3 class="text-lg font-bold">AI 신년 운세&부적 생성기</h3>
+              <p class="mt-2 text-sm text-slate-400 flex-1">
+                오늘의 운세를 분석하고, 행운을 빌어주는 세상에 하나뿐인 AI 부적을 그려주는 웹 서비스입니다.
+              </p>
+              <div class="mt-4 flex flex-wrap gap-2">
+                <span class="text-[11px] px-2 py-1 rounded bg-brand-500/10 text-brand-400 border border-brand-500/20">Python</span>
+                <span class="text-[11px] px-2 py-1 rounded bg-brand-500/10 text-brand-400 border border-brand-500/20">Streamlit</span>
+                <span class="text-[11px] px-2 py-1 rounded bg-brand-500/10 text-brand-400 border border-brand-500/20">OpenAI</span>
+              </div>
+              <div class="mt-5 flex items-center gap-4 text-sm">
+                <a href="https://ai-lucky-amulet-m5wwse595v3xezjac89j8y.streamlit.app/" class="text-brand-400 hover:text-brand-300 inline-flex items-center gap-1.5"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live</a>
+                <a href="https://github.com/jiyoungkr82/ai-lucky-amulet.git" class="text-slate-400 hover:text-white inline-flex items-center gap-1.5"><i class="fa-brands fa-github"></i> Code</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-20 md:py-28">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="rounded-3xl border border-white/10 bg-gradient-to-br from-ink-700/80 to-ink-800/80 backdrop-blur p-8 md:p-14 shadow-glow">
+          <div class="grid md:grid-cols-2 gap-12 items-start">
+            <div>
+              <span class="inline-block px-3 py-1 rounded-full text-xs tracking-widest uppercase text-brand-400 border border-brand-500/30 bg-brand-500/10">Contact</span>
+              <h2 class="mt-4 text-3xl md:text-4xl font-extrabold tracking-tight">
+                새로운 프로젝트<br /> 함께 시작해요.
+              </h2>
+              <p class="mt-4 text-slate-400">
+                간단한 아이디어 단계여도 좋습니다. 영업일 기준 24시간 안에 회신드립니다.
+              </p>
+
+              <ul class="mt-8 space-y-4 text-sm">
+                <li class="flex items-center gap-3">
+                  <span class="w-10 h-10 rounded-xl bg-brand-500/15 text-brand-400 grid place-items-center">
+                    <i class="fa-regular fa-envelope"></i>
+                  </span>
+                  <a href="mailto:jiyoung.kr82@gmail.com" class="hover:text-brand-400 transition">jiyoung.kr82@gmail.com</a>
+                </li>
+                <li class="flex items-center gap-3">
+                  <span class="w-10 h-10 rounded-xl bg-brand-500/15 text-brand-400 grid place-items-center">
+                    <i class="fa-solid fa-phone"></i>
+                  </span>
+                  <a href="tel:01055870549" class="hover:text-brand-400 transition">010-5587-0549</a>
+                </li>
+                <li class="flex items-center gap-3">
+                  <span class="w-10 h-10 rounded-xl bg-brand-500/15 text-brand-400 grid place-items-center">
+                    <i class="fa-solid fa-location-dot"></i>
+                  </span>
+                  <span>대한민국 · 원격 협업 가능</span>
+                </li>
+              </ul>
+            </div>
+
+            <form id="contactForm" class="space-y-4" novalidate>
+              <div>
+                <label for="name" class="block text-xs text-slate-400 mb-1.5">이름</label>
+                <input id="name" name="name" type="text" required placeholder="홍길동"
+                  class="w-full px-4 py-3 rounded-xl bg-ink-900/60 border border-white/10 placeholder-slate-500 focus:outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-500/30 transition" />
+              </div>
+              <div>
+                <label for="email" class="block text-xs text-slate-400 mb-1.5">이메일</label>
+                <input id="email" name="email" type="email" required placeholder="you@company.com"
+                  class="w-full px-4 py-3 rounded-xl bg-ink-900/60 border border-white/10 placeholder-slate-500 focus:outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-500/30 transition" />
+              </div>
+              <div>
+                <label for="message" class="block text-xs text-slate-400 mb-1.5">메시지</label>
+                <textarea id="message" name="message" rows="4" required placeholder="프로젝트에 대해 간단히 알려주세요."
+                  class="w-full px-4 py-3 rounded-xl bg-ink-900/60 border border-white/10 placeholder-slate-500 focus:outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-500/30 transition resize-y"></textarea>
+              </div>
+              <button type="button" id="submitToMail"
+                class="w-full inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-brand-500 hover:bg-brand-600 text-white font-semibold shadow-glow transition">
+                <i class="fa-regular fa-paper-plane"></i> 메시지 보내기
+              </button>
+              <p id="formStatus" class="text-sm min-h-[20px]" aria-live="polite"></p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="relative z-10 border-t border-white/5 mt-10">
+    <div class="max-w-6xl mx-auto px-6 py-10 flex flex-col md:flex-row items-center justify-between gap-6 text-sm text-slate-400">
+      <div class="flex items-center gap-2 font-bold text-slate-200">
+        <span class="inline-block w-6 h-6 rounded-md bg-gradient-to-br from-brand-400 to-brand-600"></span>
+        박지영 · Developer
+      </div>
+      <p>© <span id="year"></span> Jiyoung Park. All rights reserved.</p>
+      <div class="flex items-center gap-4 text-lg">
+        <a href="mailto:jiyoung.kr82@gmail.com" class="hover:text-brand-400 transition" aria-label="email"><i class="fa-regular fa-envelope"></i></a>
+        <a href="tel:01055870549" class="hover:text-brand-400 transition" aria-label="phone"><i class="fa-solid fa-phone"></i></a>
+        <a href="#" class="hover:text-brand-400 transition" aria-label="github"><i class="fa-brands fa-github"></i></a>
+        <a href="#" class="hover:text-brand-400 transition" aria-label="linkedin"><i class="fa-brands fa-linkedin"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // smooth offset for anchors
+    document.querySelectorAll('a[href^="#"]').forEach((a) => {
+      a.addEventListener('click', (e) => {
+        const id = a.getAttribute('href');
+        if (!id || id === '#') return;
+        const target = document.querySelector(id);
+        if (!target) return;
+        e.preventDefault();
+        const top = target.getBoundingClientRect().top + window.scrollY - 64;
+        window.scrollTo({ top, behavior: 'smooth' });
+      });
+    });
+
+    // contact form (front-end validation only)
+    const form = document.getElementById('contactForm');
+    const status = document.getElementById('formStatus');
+    form?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      status.classList.remove('text-rose-400', 'text-emerald-400');
+      const data = new FormData(form);
+      const name = String(data.get('name') || '').trim();
+      const email = String(data.get('email') || '').trim();
+      const message = String(data.get('message') || '').trim();
+      const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+      if (!name || !emailOk || !message) {
+        status.classList.add('text-rose-400');
+        status.textContent = !emailOk ? '올바른 이메일 주소를 입력해 주세요.' : '모든 항목을 입력해 주세요.';
+        return;
+      }
+      status.classList.add('text-emerald-400');
+      status.textContent = '메시지가 전송되었습니다. 곧 회신드리겠습니다.';
+      form.reset();
+    });
+
+    document.getElementById('submitToMail').addEventListener('click', function() {
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+
+    if(!name || !email || !message) {
+      alert("모든 항목을 입력해주세요.");
+      return;
+    }
+
+    const subject = encodeURIComponent(`[문의] ${name}님의 프로젝트 제안`);
+    const body = encodeURIComponent(`이름: ${name}\n회신받을 이메일: ${email}\n\n내용:\n${message}`);
+
+    // 메일창 호출
+    window.location.href = `mailto:jiyoung.kr82@://gmail.com{subject}&body=${body}`;
+    });
+  
+  </script>
+</body>
+</html>
